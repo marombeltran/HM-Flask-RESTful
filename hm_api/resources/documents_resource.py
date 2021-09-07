@@ -9,7 +9,7 @@ from hm_api.database import db
 from hm_api.models.document import Document
 from hm_api.schemas.document_schema import DocumentSchema
 
-documentS_ENDPOINT = "/api/documents"
+DOCUMENTS_ENDPOINT = "/api/documents"
 logger = logging.getLogger(__name__)
 
 
@@ -61,7 +61,7 @@ class DocumentsResource(Resource):
     def post(self):
         """
         DocumentResource POST method. Adds a new Document to the database.
-        :return: Docuement.document_id, 201 HTTP status code.
+        :return: Document.document_id, 201 HTTP status code.
         """
         document = DocumentSchema().load(request.get_json())
 

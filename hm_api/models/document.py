@@ -7,7 +7,7 @@ class Document(db.Model):
     Represents objects contained in the Document table
     """
 
-    __tablename__ = "document"
+    __tablename__ = "documents"
 
     document_id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     field_name = db.Column(db.String(), nullable=False)
