@@ -1,0 +1,3 @@
+flask-restful
+Flask-SQLAlchemy #
+marshmallow # simple object serialization
