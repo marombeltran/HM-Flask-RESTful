@@ -12,7 +12,6 @@ from hm_api.schemas.document_schema import DocumentSchema
 DOCUMENTS_ENDPOINT = "/api/documents"
 logger = logging.getLogger(__name__)
 
-
 class DocumentsResource(Resource):
     def get(self, id=None):
         """
@@ -70,7 +69,7 @@ class DocumentsResource(Resource):
             db.session.commit()
         except IntegrityError as e:
             logger.warning(
-                f"Integrity Error, this team is already in the database. Error: {e}"
+                f"Integrity Error, this tuple is already in the database. Error: {e}"
             )
 
             abort(500, message="Unexpected Error!")

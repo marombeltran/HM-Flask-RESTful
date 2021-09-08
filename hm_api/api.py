@@ -11,6 +11,9 @@ from hm_api.constants import PROJECT_ROOT, HM_DATABASE
 from hm_api.database import db
 from hm_api.resources.documents_resource import DocumentsResource, DOCUMENTS_ENDPOINT
 
+# importing goods resource
+from hm_api.resources.goods_resource import GoodsResource, GOODS_ENDPOINT
+
 def create_app(db_location):
     """
     Function that creates our Flask application.
@@ -32,8 +35,9 @@ def create_app(db_location):
 
     api = Api(app)
     api.add_resource(DocumentsResource, DOCUMENTS_ENDPOINT, f"{DOCUMENTS_ENDPOINT}/<id>")
-    return app
+    api.add_resource(GoodsResource, GOODS_ENDPOINT, f"{GOODS_ENDPOINT}/<id>")
 
+    return app
 
 if __name__ == "__main__":
     app = create_app(f"sqlite:////{PROJECT_ROOT}/{HM_DATABASE}")
